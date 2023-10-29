@@ -1,3 +1,9 @@
 h1 {
     color: goldenrod;
+
+    span {
+        display: block;
+        font-size: 16px;
+        color: rebeccapurple;
+    }
 }
