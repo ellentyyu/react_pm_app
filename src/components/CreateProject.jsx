@@ -1,22 +1,57 @@
 const CreateProject = () => {
     return (
-        <div className="w-full px-10 bg-neutral-100 pt-32">
-            <form className="w-5/6 bg-slate-500">
+        <div className="w-full bg-neutral-100 px-10 pt-32">
+            <form className="w-5/6">
                 <div className="flex justify-end">
-                    <button type="button">Cancel</button>
-                    <button type="submit" className="rounded-md px-5 py-3 bg-gray-950 text-neutral-100">Save</button>
+                    <button type="button" className="px-5 py-3">
+                        Cancel
+                    </button>
+                    <button
+                        type="submit"
+                        className="rounded-md bg-gray-950 px-5 py-3 text-neutral-100"
+                    >
+                        Save
+                    </button>
                 </div>
-                <div>
-                    <label for="pname" className="inline-block">TITLE</label>
-                    <input type="text" id="pname" className="block"/>
+                <div className="mb-6">
+                    <label
+                        htmlFor="pname"
+                        className="mb-2 inline-block font-semibold text-stone-600"
+                    >
+                        TITLE
+                    </label>
+                    <input
+                        type="text"
+                        id="pname"
+                        className="block w-full border-0 border-b-2 border-stone-300 bg-stone-200 focus:border-stone-600 focus:ring-0"
+                    />
                 </div>
-                <div>
-                    <label for="desc" className="inline-block">DESCRIPTION</label>
-                    <input type="text" id="desc" className="block"/>
+                <div className="mb-6">
+                    <label
+                        htmlFor="desc"
+                        className="mb-2 inline-block font-semibold text-stone-600"
+                    >
+                        DESCRIPTION
+                    </label>
+                    <input
+                        type="text"
+                        id="desc"
+                        className="block w-full border-0 border-b-2 border-stone-300 bg-stone-200 focus:border-stone-600 focus:ring-0"
+                    />
                 </div>
-                <div>
-                    <label for="date" className="inline-block">DUE DATE</label>
-                    <input type="date" id="date" className="block"/>
+                <div className="mb-6">
+                    <label
+                        htmlFor="date"
+                        className="mb-2 inline-block font-semibold text-stone-500"
+                    >
+                        DUE DATE
+                    </label>
+                    <input
+                        onFocus={e => e.target.showPicker()}
+                        type="date"
+                        id="date"
+                        className="block w-full border-0 border-b-2 border-stone-300 bg-stone-200 focus:border-stone-600 focus:ring-0"
+                    />
                 </div>
             </form>
         </div>
