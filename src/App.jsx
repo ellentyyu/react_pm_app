@@ -1,14 +1,12 @@
 import SideBar from "./components/SideBar";
-
+import MainView from "./components/MainView";
 const App = () => {
     return (
         <div className="flex h-screen bg-neutral-100">
             <SideBar />
-            <h1 className="my-8 text-center text-5xl font-bold">Hello World
-                <span>happy helloween</span>
-            </h1>
+            <MainView />
         </div>
     );
-}
+};
 
 export default App;

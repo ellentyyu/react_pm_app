@@ -1,6 +1,6 @@
 const SideBar = () => {
     return (
-        <div className="mt-10 w-80 rounded-tr-xl bg-black px-6 pt-16 text-neutral-100 ">
+        <div className="mt-10 w-96 rounded-tr-xl bg-black px-6 pt-16 text-neutral-100 ">
             <h2 className="mb-7 text-2xl font-semibold text-neutral-100">
                 YOUR PROJECTS
             </h2>
