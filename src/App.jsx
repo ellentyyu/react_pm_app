@@ -8,7 +8,7 @@ const App = () => {
                 <span>happy helloween</span>
             </h1>
         </div>
-);
+    );
 }
 
 export default App;
