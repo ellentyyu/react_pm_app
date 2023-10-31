@@ -1,6 +1,6 @@
 const CreateProject = () => {
     return (
-        <div className="w-full bg-neutral-100 px-10 pt-32">
+        <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-100 px-10 pt-32">
             <form className="w-5/6">
                 <div className="flex justify-end">
                     <button type="button" className="px-5 py-3">

@@ -1,5 +1,6 @@
 import SideBar from "./components/SideBar";
 import MainView from "./components/MainView";
+import ProjectView from "./components/ProjectView";
 import CreateProject from "./components/CreateProject";
 const App = () => {
     return (
@@ -7,6 +8,7 @@ const App = () => {
             <SideBar />
             {/* <MainView /> */}
             <CreateProject />
+            {/* <ProjectView /> */}
         </div>
     );
 };

@@ -2,7 +2,7 @@ import noProjectsImg from "../assets/no-projects.png";
 
 const MainView = () => {
     return (
-        <div className="flex w-full items-start justify-center bg-neutral-100 pt-32">
+        <div className="flex w-[calc(100%-theme(spacing.96))] items-start justify-center bg-neutral-100 pt-32">
             <div className="flex flex-col items-center">
                 <img
                     className="mb-5 w-20"
