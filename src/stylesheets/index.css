@@ -2,4 +2,5 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "./base/reset.css";
+@import "./base/general.css";
 @import "./component.css";
