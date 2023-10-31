@@ -7,8 +7,8 @@ const App = () => {
         <div className="flex h-screen bg-neutral-100">
             <SideBar />
             {/* <MainView /> */}
-            <CreateProject />
-            {/* <ProjectView /> */}
+            {/* <CreateProject /> */}
+            <ProjectView />
         </div>
     );
 };
