@@ -5,8 +5,19 @@ import ProjectView from "./components/ProjectView";
 import CreateProject from "./components/CreateProject";
 const App = () => {
     const [isCreating, setIsCreating] = useState(false);
-    const [projectList, setProjectList] = useState([]);
-    console.log(projectList);
+    const [projectList, setProjectList] = useState([
+        {
+            id: 222,
+            title: 'project01 its a very lo ooo oo oo o oo oo oo ooo ng naaa aa aaaa aaaa meeeee eeeeee eeeee',
+            decs: 'test description'
+        },
+        {
+            id: 3323,
+            title: 'project02',
+            decs: 'test description'
+        }
+    ]);
+
     const createProjectHandler = () => {
         setIsCreating(true);
     }

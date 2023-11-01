@@ -7,3 +7,11 @@ h1 {
         color: rebeccapurple;
     }
 }
+
+.sidebar__item {
+    @apply mb-4  p-2 text-stone-400;
+
+    &.active {
+        @apply bg-stone-900 text-stone-300;
+    }
+}
