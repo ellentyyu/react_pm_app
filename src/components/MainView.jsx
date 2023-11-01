@@ -1,6 +1,6 @@
 import noProjectsImg from "../assets/no-projects.png";
 
-const MainView = () => {
+const MainView = props => {
     return (
         <div className="flex w-[calc(100%-theme(spacing.96))] items-start justify-center bg-neutral-100 pt-32">
             <div className="flex flex-col items-center">
@@ -15,7 +15,10 @@ const MainView = () => {
                 <p className="mb-8 text-stone-400">
                     Select a project or get started with a new one
                 </p>
-                <button className="rounded-md bg-stone-700 p-4 text-stone-400">
+                <button
+                    className="rounded-md bg-stone-700 p-4 text-stone-400"
+                    onClick={props.onCreate}
+                >
                     Create new project
                 </button>
             </div>

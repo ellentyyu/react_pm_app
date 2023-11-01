@@ -1,9 +1,35 @@
-const CreateProject = () => {
+import { useRef } from "react";
+const CreateProject = props => {
+    const titleInput = useRef();
+    const descInput = useRef();
+    const dateInput = useRef();
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        const projectData = {
+            id: Date.now(),
+            title: titleInput.current.value,
+            desc: descInput.current.value,
+            date: new Date(dateInput.current.value)
+        }
+        cancelHandler();
+        props.onAdd(projectData);
+    }
+
+    const cancelHandler = () => {
+        titleInput.current.value = ''
+        descInput.current.value = ''
+        dateInput.current.value = ''
+    }
     return (
         <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-100 px-10 pt-32">
-            <form className="w-5/6">
+            <form className="w-5/6" onSubmit={submitHandler}>
                 <div className="flex justify-end">
-                    <button type="button" className="px-5 py-3">
+                    <button 
+                        type="button"
+                        className="px-5 py-3"
+                        onClick={cancelHandler}
+                    >
                         Cancel
                     </button>
                     <button
@@ -24,6 +50,8 @@ const CreateProject = () => {
                         type="text"
                         id="pname"
                         className="block w-full border-0 border-b-2 border-stone-300 bg-stone-200 focus:border-stone-600 focus:ring-0"
+                        ref={titleInput}
+                        required
                     />
                 </div>
                 <div className="mb-6">
@@ -37,6 +65,7 @@ const CreateProject = () => {
                         type="text"
                         id="desc"
                         className="block w-full border-0 border-b-2 border-stone-300 bg-stone-200 focus:border-stone-600 focus:ring-0"
+                        ref={descInput}
                     />
                 </div>
                 <div className="mb-6">
@@ -51,6 +80,7 @@ const CreateProject = () => {
                         type="date"
                         id="date"
                         className="block w-full border-0 border-b-2 border-stone-300 bg-stone-200 focus:border-stone-600 focus:ring-0"
+                        ref={dateInput}
                     />
                 </div>
             </form>
