@@ -1,4 +1,5 @@
-const ProjectView = () => {
+const ProjectView = ({ project }) => {
+    console.log('pv', project);
     return (
         <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-100 px-10 pt-16">
             <div className="w-5/6">

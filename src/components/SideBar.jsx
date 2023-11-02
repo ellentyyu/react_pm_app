@@ -1,10 +1,7 @@
-import { useState } from "react";
-const SideBar = ({ onCreate, projectList }) => {
-    const [selectedId, setSelectedId] = useState(null);
-    const selectHandler = (event, project) => {
+const SideBar = ({ onCreate, onView, projectList, selectedId }) => {
+    const selectHandler = (event, id) => {
         event.preventDefault();
-        console.log(project);
-        //setSelectedId()
+        onView(id);
     }
 
     return (
@@ -22,7 +19,7 @@ const SideBar = ({ onCreate, projectList }) => {
             <ul className="pt-16">
                 {projectList.map(project => (
                     <li key={project.id}>
-                        <a href="#" className={`sidebar__item ${selectedId === project.id ? 'active': ''}`} onClick={(event) => selectHandler(event, project)}>{project.title}</a>                        
+                        <a href="#" className={`sidebar__item ${selectedId === project.id ? 'active': ''}`} onClick={(event) => selectHandler(event, project.id)}>{project.title}</a>
                     </li>
                 ))}
             </ul>

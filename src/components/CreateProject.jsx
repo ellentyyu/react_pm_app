@@ -1,5 +1,5 @@
 import { useRef } from "react";
-const CreateProject = props => {
+const CreateProject = ({ onAdd, onDone }) => {
     const titleInput = useRef();
     const descInput = useRef();
     const dateInput = useRef();
@@ -13,13 +13,14 @@ const CreateProject = props => {
             date: new Date(dateInput.current.value)
         }
         cancelHandler();
-        props.onAdd(projectData);
+        onAdd(projectData);
     }
 
     const cancelHandler = () => {
         titleInput.current.value = ''
         descInput.current.value = ''
         dateInput.current.value = ''
+        onDone();
     }
     return (
         <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-100 px-10 pt-32">
