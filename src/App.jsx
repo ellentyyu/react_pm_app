@@ -46,6 +46,10 @@ const App = () => {
         setSelectedId(id);
         setIsViewing(true);
     };
+    const deleteProjectHandler = (id) => {
+        setProjectList(projectList.filter(project => project.id !== id));
+        setIsViewing(false);
+    }
 
     const addNewTaskHandler = (task) => {
         const nextProjectList = projectList.map(project => {
@@ -86,7 +90,7 @@ const App = () => {
                     onDone={finishCreatingHandler}
                 />
             )}
-            {isViewing && <ProjectView project={selectedProject} onAddTask={addNewTaskHandler} onClearTask={clearTaskHandler} />}
+            {isViewing && <ProjectView project={selectedProject} onAddTask={addNewTaskHandler} onClearTask={clearTaskHandler} onDeleteProject={deleteProjectHandler} />}
         </div>
     );
 };

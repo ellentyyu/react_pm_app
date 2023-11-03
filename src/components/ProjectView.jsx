@@ -1,6 +1,5 @@
 import { useRef } from "react";
-const ProjectView = ({ project, onAddTask, onClearTask }) => {
-    console.log('here view', project);
+const ProjectView = ({ project, onAddTask, onClearTask, onDeleteProject }) => {
     const monthsList = [
         "Jan",
         "Feb",
@@ -16,15 +15,13 @@ const ProjectView = ({ project, onAddTask, onClearTask }) => {
         "Dec",
     ];
     const taskInput = useRef();
+
     const addHandler = () => {
         if (taskInput.current.value.trim().length === 0) return;
         onAddTask(taskInput.current.value.trim());
         taskInput.current.value = '';
     }
 
-    const clearHandler = (idx) => {
-        onClearTask(idx);
-    }
     return (
         <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-100 px-10 pt-16">
             <div className="w-5/6">
@@ -33,7 +30,7 @@ const ProjectView = ({ project, onAddTask, onClearTask }) => {
                         <h2 className="text-3xl font-bold tracking-wide text-stone-700">
                             {project.title}
                         </h2>
-                        <button type="button">Delete</button>
+                        <button type="button" onClick={() => {onDeleteProject(project.id)}}>Delete</button>
                     </div>
                     <p className="mb-6 text-stone-400">
                         {monthsList[project.date.getMonth()]}{" "}
@@ -63,7 +60,7 @@ const ProjectView = ({ project, onAddTask, onClearTask }) => {
                                 {project.taskList.map((task, idx) => (
                                     <li key={task+idx} className="flex justify-between py-3">
                                         <p>{task}</p>
-                                        <button type="button" onClick={() => {clearHandler(idx)}}>Clear</button>
+                                        <button type="button" onClick={() => {onClearTask(idx)}}>Clear</button>
                                     </li>
                                 ))}
                             </ul>
