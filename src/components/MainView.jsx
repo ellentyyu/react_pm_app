@@ -1,6 +1,6 @@
-import noProjectsImg from "../assets/no-projects.png";
+import noProjectsImg from '../assets/no-projects.png';
 
-const MainView = props => {
+const MainView = (props) => {
     return (
         <div className="flex w-[calc(100%-theme(spacing.96))] items-start justify-center bg-neutral-50 pt-32">
             <div className="flex flex-col items-center">

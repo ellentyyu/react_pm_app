@@ -2,7 +2,7 @@ const SideBar = ({ onCreate, onView, projectList, selectedId }) => {
     const selectHandler = (event, id) => {
         event.preventDefault();
         onView(id);
-    }
+    };
 
     return (
         <div className="mt-11 w-96 rounded-tr-xl bg-black px-10 pt-16 text-neutral-100 ">
@@ -17,9 +17,19 @@ const SideBar = ({ onCreate, onView, projectList, selectedId }) => {
                 + Add Project
             </button>
             <ul className="pt-16">
-                {projectList.map(project => (
+                {projectList.map((project) => (
                     <li key={project.id}>
-                        <a href="#" className={`sidebar__item ${selectedId === project.id ? 'active': ''}`} onClick={(event) => selectHandler(event, project.id)}>{project.title}</a>
+                        <a
+                            href="#"
+                            className={`sidebar__item ${
+                                selectedId === project.id ? 'active' : ''
+                            }`}
+                            onClick={(event) =>
+                                selectHandler(event, project.id)
+                            }
+                        >
+                            {project.title}
+                        </a>
                     </li>
                 ))}
             </ul>

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 const CreateProject = ({ onSaveProject, onDone }) => {
     const titleInput = useRef();
     const descInput = useRef();
@@ -11,23 +11,23 @@ const CreateProject = ({ onSaveProject, onDone }) => {
             title: titleInput.current.value,
             desc: descInput.current.value,
             date: new Date(dateInput.current.value),
-            taskList: []
-        }
+            taskList: [],
+        };
         cancelHandler();
         onSaveProject(projectData);
-    }
+    };
 
     const cancelHandler = () => {
-        titleInput.current.value = ''
-        descInput.current.value = ''
-        dateInput.current.value = ''
+        titleInput.current.value = '';
+        descInput.current.value = '';
+        dateInput.current.value = '';
         onDone();
-    }
+    };
     return (
         <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-50 px-10 pt-32">
             <form className="w-5/6" onSubmit={submitHandler}>
                 <div className="flex justify-end">
-                    <button 
+                    <button
                         type="button"
                         className="px-5 py-3"
                         onClick={cancelHandler}
@@ -78,7 +78,7 @@ const CreateProject = ({ onSaveProject, onDone }) => {
                         DUE DATE
                     </label>
                     <input
-                        onFocus={e => e.target.showPicker()}
+                        onFocus={(e) => e.target.showPicker()}
                         type="date"
                         id="date"
                         className="block w-full border-0 border-b-2 border-stone-300 bg-stone-200 focus:border-stone-600 focus:ring-0"
