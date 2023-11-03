@@ -1,5 +1,5 @@
 import { useRef } from "react";
-const CreateProject = ({ onAdd, onDone }) => {
+const CreateProject = ({ onSaveProject, onDone }) => {
     const titleInput = useRef();
     const descInput = useRef();
     const dateInput = useRef();
@@ -10,10 +10,11 @@ const CreateProject = ({ onAdd, onDone }) => {
             id: Date.now(),
             title: titleInput.current.value,
             desc: descInput.current.value,
-            date: new Date(dateInput.current.value)
+            date: new Date(dateInput.current.value),
+            taskList: []
         }
         cancelHandler();
-        onAdd(projectData);
+        onSaveProject(projectData);
     }
 
     const cancelHandler = () => {

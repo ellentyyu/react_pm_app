@@ -11,16 +11,20 @@ const App = () => {
         {
             id: 222,
             title: "project01 its a very lo ooo oo oo o oo oo oo ooo ng naaa aa aaaa aaaa meeeee eeeeee eeeee",
-            decs: "test description",
+            desc: "蛋包飯要咖哩還是奶油口味的發生，到底需要如何做到，不蛋包飯要咖哩還是奶油口味的發生，又會如何產生。我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。",
+            date: new Date("2022-03-25"),
+            taskList: []
         },
         {
             id: 3323,
             title: "project02",
-            decs: "test description",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ipsam numquam voluptatum facere, nam optio nulla. Quasi iure harum asperiores.",
+            date: new Date("2022-07-18"),
+            taskList: []
         },
     ]);
 
-    let selectedProject = projectList.filter(
+    let selectedProject = projectList.find(
         (project) => project.id === selectedId,
     );
 
@@ -35,17 +39,40 @@ const App = () => {
     const finishCreatingHandler = () => {
         setIsCreating(false);
     };
-    const addNewProjectHandler = (project) => {
+    const saveNewProjectHandler = (project) => {
         setProjectList([...projectList, project]);
     };
     const viewProjectHandler = (id) => {
-        console.log("view", id);
         setSelectedId(id);
         setIsViewing(true);
     };
 
+    const addNewTaskHandler = (task) => {
+        const nextProjectList = projectList.map(project => {
+            if (project.id === selectedId) {
+                return {...project, taskList: [...project.taskList, task]};
+            } else {
+                return project;
+            }
+        });
+
+        setProjectList(nextProjectList);
+    }
+
+    const clearTaskHandler = (taskIdx) => {
+        const nextProjectList = projectList.map(project => {
+            if (project.id === selectedId) {
+                return {...project, taskList: project.taskList.filter((_, idx) => idx !== taskIdx)};
+            } else {
+                return project;
+            }
+        });
+
+        setProjectList(nextProjectList);
+    }
+
     return (
-        <div className="flex h-screen bg-neutral-100">
+        <div className="flex min-h-screen bg-neutral-100">
             <SideBar
                 projectList={projectList}
                 onCreate={createProjectHandler}
@@ -55,11 +82,11 @@ const App = () => {
             {(!isCreating && !isViewing) && <MainView onCreate={createProjectHandler} />}
             {(isCreating && !isViewing) && (
                 <CreateProject
-                    onAdd={addNewProjectHandler}
+                    onSaveProject={saveNewProjectHandler}
                     onDone={finishCreatingHandler}
                 />
             )}
-            {isViewing && <ProjectView project={selectedProject} />}
+            {isViewing && <ProjectView project={selectedProject} onAddTask={addNewTaskHandler} onClearTask={clearTaskHandler} />}
         </div>
     );
 };
