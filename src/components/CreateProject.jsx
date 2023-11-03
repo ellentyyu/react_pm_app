@@ -24,7 +24,7 @@ const CreateProject = ({ onSaveProject, onDone }) => {
         onDone();
     }
     return (
-        <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-100 px-10 pt-32">
+        <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-50 px-10 pt-32">
             <form className="w-5/6" onSubmit={submitHandler}>
                 <div className="flex justify-end">
                     <button 

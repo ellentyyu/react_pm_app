@@ -23,14 +23,14 @@ const ProjectView = ({ project, onAddTask, onClearTask, onDeleteProject }) => {
     }
 
     return (
-        <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-100 px-10 pt-16">
+        <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-50 px-10 pt-16">
             <div className="w-5/6">
                 <div className="border-b-2 border-solid border-stone-300 py-6">
                     <div className="mb-4 flex justify-between">
                         <h2 className="text-3xl font-bold tracking-wide text-stone-700">
                             {project.title}
                         </h2>
-                        <button type="button" onClick={() => {onDeleteProject(project.id)}}>Delete</button>
+                        <button className="transition-all hover:text-red-600" type="button" onClick={() => {onDeleteProject(project.id)}}>Delete</button>
                     </div>
                     <p className="mb-6 text-stone-400">
                         {monthsList[project.date.getMonth()]}{" "}
@@ -60,7 +60,7 @@ const ProjectView = ({ project, onAddTask, onClearTask, onDeleteProject }) => {
                                 {project.taskList.map((task, idx) => (
                                     <li key={task+idx} className="flex justify-between py-3">
                                         <p>{task}</p>
-                                        <button type="button" onClick={() => {onClearTask(idx)}}>Clear</button>
+                                        <button className="transition-all hover:text-red-600" type="button" onClick={() => {onClearTask(idx)}}>Clear</button>
                                     </li>
                                 ))}
                             </ul>

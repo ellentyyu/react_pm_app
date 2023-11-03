@@ -76,7 +76,7 @@ const App = () => {
     }
 
     return (
-        <div className="flex min-h-screen bg-neutral-100">
+        <div className="flex min-h-screen bg-neutral-50">
             <SideBar
                 projectList={projectList}
                 onCreate={createProjectHandler}
