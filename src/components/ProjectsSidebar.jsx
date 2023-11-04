@@ -1,4 +1,4 @@
-const SideBar = ({ onCreate, onView, projectList, selectedId }) => {
+const ProjectsSidebar = ({ onCreate, onView, projectList, selectedId }) => {
     const selectHandler = (event, id) => {
         event.preventDefault();
         onView(id);
@@ -37,4 +37,4 @@ const SideBar = ({ onCreate, onView, projectList, selectedId }) => {
     );
 };
 
-export default SideBar;
+export default ProjectsSidebar;

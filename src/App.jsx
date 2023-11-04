@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SideBar from './components/SideBar';
+import ProjectsSidebar from './components/ProjectsSidebar';
 import MainView from './components/MainView';
 import ProjectView from './components/ProjectView';
 import CreateProject from './components/CreateProject';
@@ -86,7 +86,7 @@ const App = () => {
 
     return (
         <div className="flex min-h-screen bg-neutral-50">
-            <SideBar
+            <ProjectsSidebar
                 projectList={projectList}
                 onCreate={createProjectHandler}
                 onView={viewProjectHandler}
