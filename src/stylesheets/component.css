@@ -12,6 +12,6 @@ h1 {
     @apply mb-4  p-2 text-stone-400;
 
     &.active {
-        @apply bg-stone-900 text-stone-300;
+        @apply bg-stone-800 text-stone-300;
     }
 }

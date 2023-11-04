@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProjectsSidebar from './components/ProjectsSidebar';
-import MainView from './components/MainView';
+import MainWrapper from './components/MainWrapper';
+import Home from './components/Home';
 import ProjectView from './components/ProjectView';
 import CreateProject from './components/CreateProject';
 const App = () => {
@@ -91,23 +92,26 @@ const App = () => {
                 onView={viewProjectHandler}
                 selectedId={selectedId}
             />
-            {!isCreating && !isViewing && (
-                <MainView onCreate={createProjectHandler} />
-            )}
-            {isCreating && !isViewing && (
-                <CreateProject
-                    onSaveProject={saveNewProjectHandler}
-                    onDone={finishCreatingHandler}
-                />
-            )}
-            {isViewing && (
-                <ProjectView
-                    project={selectedProject}
-                    onAddTask={addNewTaskHandler}
-                    onClearTask={clearTaskHandler}
-                    onDeleteProject={deleteProjectHandler}
-                />
-            )}
+            <MainWrapper>
+                {!isCreating && !isViewing && (
+                    <Home onCreate={createProjectHandler} />
+                )}
+                {isCreating && !isViewing && (
+                    <CreateProject
+                        onSaveProject={saveNewProjectHandler}
+                        onDone={finishCreatingHandler}
+                    />
+                )}
+                {isViewing && (
+                    <ProjectView
+                        project={selectedProject}
+                        onAddTask={addNewTaskHandler}
+                        onClearTask={clearTaskHandler}
+                        onDeleteProject={deleteProjectHandler}
+                    />
+                )}
+            </MainWrapper>
+
         </div>
     );
 };

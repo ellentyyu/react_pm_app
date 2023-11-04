@@ -24,8 +24,8 @@ const CreateProject = ({ onSaveProject, onDone }) => {
         onDone();
     };
     return (
-        <div className="w-[calc(100%-theme(spacing.80))] bg-stone-50 px-10 pt-32">
-            <form className="w-5/6" onSubmit={submitHandler}>
+        <div className="pt-32">
+            <form className="w-full md:w-5/6" onSubmit={submitHandler}>
                 <div className="flex justify-end">
                     <button
                         type="button"

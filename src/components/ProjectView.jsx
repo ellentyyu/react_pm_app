@@ -23,11 +23,11 @@ const ProjectView = ({ project, onAddTask, onClearTask, onDeleteProject }) => {
     };
 
     return (
-        <div className="w-[calc(100%-theme(spacing.80))] bg-stone-50 px-10 pt-16">
-            <div className="w-5/6">
+        <div className="pt-16">
+            <div className="w-full md:w-5/6">
                 <div className="border-b-2 border-solid border-stone-300 py-6">
                     <div className="mb-4 flex justify-between">
-                        <h2 className="text-3xl font-bold tracking-wide text-stone-700">
+                        <h2 className="mr-2 text-lg md:text-2xl font-bold tracking-wide text-stone-700">
                             {project.title}
                         </h2>
                         <button
@@ -44,10 +44,10 @@ const ProjectView = ({ project, onAddTask, onClearTask, onDeleteProject }) => {
                         {monthsList[project.date.getMonth()]}{' '}
                         {project.date.getDate()}, {project.date.getFullYear()}
                     </p>
-                    <p className="w-3/4">{project.desc}</p>
+                    <p className="w-full md:w-4/5">{project.desc}</p>
                 </div>
                 <div className="py-6">
-                    <h3 className="mb-4 text-2xl font-bold text-stone-700">
+                    <h3 className="mb-4 text-lg md:text-xl font-bold text-stone-700">
                         Tasks
                     </h3>
                     <form className="mb-6 flex items-center">
