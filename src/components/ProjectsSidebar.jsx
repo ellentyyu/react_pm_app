@@ -5,13 +5,13 @@ const ProjectsSidebar = ({ onCreate, onView, projectList, selectedId }) => {
     };
 
     return (
-        <div className="mt-11 w-96 rounded-tr-xl bg-black px-10 pt-16 text-neutral-100 ">
-            <h2 className="mb-7 text-2xl font-semibold text-neutral-100">
+        <div className="mt-11 w-1/3 md:w-80 rounded-tr-xl bg-stone-900 px-4 md:px-8 pt-16 text-stone-50">
+            <h2 className="mb-7 md:text-xl font-bold text-stone-200">
                 YOUR PROJECTS
             </h2>
             <button
                 type="button"
-                className="rounded-md bg-stone-700 p-4 text-stone-400"
+                className="rounded-md bg-stone-700 px-4 py-2 text-xs md:text-base text-stone-400 hover:bg-stone-600 hover:text-stone-100 transition-all"
                 onClick={onCreate}
             >
                 + Add Project

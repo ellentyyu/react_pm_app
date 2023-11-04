@@ -23,7 +23,7 @@ const ProjectView = ({ project, onAddTask, onClearTask, onDeleteProject }) => {
     };
 
     return (
-        <div className="w-[calc(100%-theme(spacing.96))] bg-neutral-50 px-10 pt-16">
+        <div className="w-[calc(100%-theme(spacing.80))] bg-stone-50 px-10 pt-16">
             <div className="w-5/6">
                 <div className="border-b-2 border-solid border-stone-300 py-6">
                     <div className="mb-4 flex justify-between">

@@ -7,7 +7,6 @@ const App = () => {
     const [isCreating, setIsCreating] = useState(false);
     const [isViewing, setIsViewing] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
-    console.log(selectedId);
     const [projectList, setProjectList] = useState([
         {
             id: 222,
