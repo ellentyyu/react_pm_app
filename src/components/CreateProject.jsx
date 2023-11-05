@@ -26,17 +26,17 @@ const CreateProject = ({ onSaveProject, onDone }) => {
     return (
         <div className="pt-32">
             <form className="w-full md:w-5/6" onSubmit={submitHandler}>
-                <div className="flex justify-end">
+                <div className="flex justify-end gap-2">
                     <button
                         type="button"
-                        className="px-5 py-3"
+                        className="px-5 py-3 text-stone-800 hover:text-stone-950"
                         onClick={cancelHandler}
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
-                        className="rounded-md bg-gray-950 px-5 py-3 text-neutral-100"
+                        className="rounded-md bg-stone-800 hover:bg-stone-950 transition-all px-5 py-3 text-stone-50"
                     >
                         Save
                     </button>
@@ -44,7 +44,7 @@ const CreateProject = ({ onSaveProject, onDone }) => {
                 <div className="mb-6">
                     <label
                         htmlFor="pname"
-                        className="mb-2 inline-block font-semibold text-stone-600"
+                        className="mb-2 inline-block font-semibold text-stone-500"
                     >
                         TITLE
                     </label>
@@ -59,7 +59,7 @@ const CreateProject = ({ onSaveProject, onDone }) => {
                 <div className="mb-6">
                     <label
                         htmlFor="desc"
-                        className="mb-2 inline-block font-semibold text-stone-600"
+                        className="mb-2 inline-block font-semibold text-stone-500"
                     >
                         DESCRIPTION
                     </label>
